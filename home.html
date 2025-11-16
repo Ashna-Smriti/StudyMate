@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StudyMate | Home</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="glass-card">
+    <h1>Welcome, <span id="welcomeUser">User</span>!</h1>
+    <p>What would you like to achieve today?</p>
+    
+    <button onclick="window.location.href='roadmap.html'" class="btn btn-primary">🚀 Create My Roadmap</button>
+    <button onclick="window.location.href='chat.html'" class="btn btn-primary" style="background: linear-gradient(45deg, #23a6d5, #23d5ab);">💬 Chat with AI Tutor</button>
+    
+    <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+        <button onclick="logout()" class="btn btn-secondary">Log Out</button>
+    </div>
+  </div>
+  <script src="../static/script.js"></script>
+</body>
+</html>

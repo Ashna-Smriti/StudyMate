@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ANIMATED BACKGROUND */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* GLASSMORPHISM CARD */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.glass-card.wide {
+    max-width: 800px; /* Wider for roadmap */
+}
+
+/* TYPOGRAPHY */
+h1 { margin-bottom: 10px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+p { margin-bottom: 20px; color: #e0e0e0; font-size: 0.9rem; }
+.label { display: block; text-align: left; margin: 10px 0 5px; font-size: 0.85rem; opacity: 0.8; }
+
+/* INPUTS */
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+input::placeholder { color: #ddd; }
+input:focus { background: rgba(255, 255, 255, 0.3); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+
+/* BUTTONS */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ffbc00, #ff0058);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 0, 88, 0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 88, 0.6); }
+
+.btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.3); }
+
+/* ROADMAP SPECIFIC STYLES */
+.roadmap-container {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.roadmap-container::-webkit-scrollbar { width: 6px; }
+.roadmap-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 3px; }
+
+.month-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #ffbc00;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 0 10px 10px 0;
+    transition: transform 0.2s;
+}
+.month-card:hover { transform: translateX(5px); background: rgba(0, 0, 0, 0.3); }
+.month-header { color: #ffbc00; font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; }
+.month-goal { font-style: italic; color: #ccc; margin-bottom: 10px; font-size: 0.9rem; }
+.task-list li { margin-bottom: 4px; font-size: 0.9rem; color: #eee; margin-left: 20px; }
+
+/* CHAT SPECIFIC STYLES */
+.chat-box {
+    height: 350px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.msg { padding: 10px 15px; margin: 5px; border-radius: 15px; max-width: 80%; font-size: 0.9rem; }
+.msg.user { align-self: flex-end; background: #23a6d5; color: white; border-bottom-right-radius: 2px; }
+.msg.bot { align-self: flex-start; background: rgba(255,255,255,0.85); color: #333; border-bottom-left-radius: 2px; }

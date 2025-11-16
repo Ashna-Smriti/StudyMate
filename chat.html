@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StudyMate | AI Tutor</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="glass-card wide">
+    <h1>AI Tutor</h1>
+    <p>Ask me anything about your studies.</p>
+    
+    <div class="chat-box" id="messages">
+        <div class="msg bot">Hello! I'm StudyMate. How can I help you learn today?</div>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+        <input type="text" id="chatInput" placeholder="Type your question..." style="margin-bottom: 0;">
+        <button onclick="sendChat()" class="btn btn-primary" style="width: 100px; margin-top: 0;">Send</button>
+    </div>
+    
+    <button onclick="window.location.href='home.html'" class="btn btn-secondary" style="margin-top: 20px;">Back</button>
+  </div>
+
+  <script src="../static/script.js"></script>
+  <script>
+      // Enter key listener for chat
+      document.getElementById("chatInput").addEventListener("keypress", function(event) {
+          if (event.key === "Enter") sendChat();
+      });
+  </script>
+</body>
+</html>
